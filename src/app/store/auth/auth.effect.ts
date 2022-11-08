@@ -31,7 +31,7 @@ export  class AuthEffects {
                 const user = this.authService.formatUser(data);
                 return loginSucess({user});
               }),
-              //  catchError((data) =>{
+              //  catchError((data) =>{ // if error responce not send in 404 this code not work
               //   console.log()
               //   return of()
               //  })
