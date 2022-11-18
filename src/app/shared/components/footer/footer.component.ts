@@ -7,12 +7,12 @@ import { environment } from 'src/environments/environment';
 })
 export class FooterComponent implements OnInit {
 
-  imgdir:string;
+
   date: any = new Date();
-  constructor() { this.imgdir = environment.imgdir}
+  constructor() {}
 
   // baseUrl = environment.baseUrl;
-  baseUrl = environment.baseUrl.replace(/^https?:\/\//, 'www.');
+  // baseUrl = environment.baseUrl.replace(/^https?:\/\//, 'www.');
   ngOnInit() { 
     this.date = new Date().getFullYear();
   }

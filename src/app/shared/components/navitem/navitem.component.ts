@@ -9,7 +9,7 @@ import { environment } from '../../../../environments/environment';
 export class NavitemComponent {
 
   @Input() menudata:any;
-  baseUrl = environment.baseUrl;
+  // baseUrl = environment.baseUrl;
   constructor(public router: Router) { }
 
    goTo_noChild(menudata : any){
