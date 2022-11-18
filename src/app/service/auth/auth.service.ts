@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { AuthResponceData } from 'src/app/model/authResponceData.model';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/model/user.model';
+import { logOut } from 'src/app/store/auth/auth.action';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +36,16 @@ getErrorMessage(message: Error){
   // }
 }
 
+setUserInLocalStorage(user: User){
+  localStorage.setItem('userData', JSON.stringify(user))
 }
+
+logOut(){
+  localStorage.removeItem('userData')
+}
+
+}
+
 
 // getErrorMessage(data: )
 

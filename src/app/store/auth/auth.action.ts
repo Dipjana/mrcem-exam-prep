@@ -4,6 +4,7 @@ import { User } from 'src/app/model/user.model';
 export const LOGIN_START = '[auth page] login start';
 export const LOGIN_SUCCESS = '[auth page] login sucess';
 export const LOGIN_FAIL = '[auth page] login fail';
+export const LOGOUT_ACTION = '[auth page] logout';
 
 export const loginStart = createAction(
     LOGIN_START,
@@ -19,3 +20,5 @@ export const loginFail = createAction(
     LOGIN_FAIL,
     props<{error: any}>()
 );
+
+export const logOut = createAction(LOGOUT_ACTION);

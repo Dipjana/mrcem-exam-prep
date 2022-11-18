@@ -1,16 +1,18 @@
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { Store } from "@ngrx/store";
-import { catchError, exhaustMap, map, of } from "rxjs";
+import { catchError, exhaustMap, map, of, tap } from "rxjs";
 // import { User } from "src/app/model/user.model";
 import { AuthService } from "src/app/service/auth/auth.service";
 import { AppState } from "../app.state";
 import { setLoadingSpinner } from "../shared/shared.action";
-import { loginFail, loginStart, loginSucess } from "./auth.action";
+import { loginFail, loginStart, loginSucess, logOut } from "./auth.action";
 
 @Injectable()
 export  class AuthEffects {
-    constructor(private actions$: Actions, private authService: AuthService, private store: Store<AppState>){}
+    constructor(private actions$: Actions, private authService: AuthService, private store: Store<AppState>,
+      private router: Router){}
 
     login$ = createEffect(() =>{
         return this.actions$.pipe(
@@ -29,6 +31,7 @@ export  class AuthEffects {
                 // }
                 this.store.dispatch(setLoadingSpinner({status: false}));
                 const user = this.authService.formatUser(data);
+                this.authService.setUserInLocalStorage(user);
                 return loginSucess({user});
               }),
               //  catchError((data) =>{ // if error responce not send in 404 this code not work
@@ -38,5 +41,26 @@ export  class AuthEffects {
               ) 
             })
         )
+    });
+
+    loginRedirect$ = createEffect(
+      ()=> {
+        return this.actions$.pipe(
+          ofType(loginSucess),
+          tap((action) => {
+            this.router.navigate(['/dashboard'])
+          })
+        );
+      },
+      {dispatch: false} // if i remove it's try to return some thing
+    )
+
+    logout$ = createEffect(()=>{
+      return this.actions$.pipe(ofType(logOut), map(action =>{
+this.authService.logOut();
+this.router.navigate(['/dashboard/login'])
+      }))
+    },{
+      dispatch: false
     })
 }

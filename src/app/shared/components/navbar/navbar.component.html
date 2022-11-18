@@ -1,0 +1,18 @@
+<div class="relative flex flex-coloum justify-between bg-white dark:bg-deepblueshade1 m-auto py-2 pl-2">
+    <div class="flex justify-start ml-0.5">
+        <a [routerLink]="['']">
+          <span class="sr-only">MRCEM</span>
+          <img class="dark:hidden" src="assets/images/mrcem/logo2.png" alt="logo">
+        </a>
+      </div>
+<div class="mr-4 mt-3">
+    <a *ngIf="!(isAuthenticated | async)" [routerLink]="['/buy-mrcem-primary']" class="ml-2 whitespace-nowrap hidden lg:inline-flex items-center justify-center px-4  border border-blue-500 rounded-full shadow-sm text-xs leading-8 font-medium text-blue-500 bg-white hover:bg-blue-900 hover:text-white uppercase dark:bg-white hover:dark:bg-lightblue dark:text-deepblue dark:border-0"> MRCEM PRIMARY </a>
+    <a *ngIf="!(isAuthenticated | async)" [routerLink]="['/buy-mrcem-intermediate']" class="ml-2 whitespace-nowrap hidden lg:inline-flex items-center justify-center px-4  border border-blue-500 rounded-full shadow-sm text-xs leading-8 font-medium text-blue-500 bg-white hover:bg-blue-900 hover:text-white uppercase dark:bg-white hover:dark:bg-lightblue dark:text-deepblue dark:border-0"> MRCEM INTERMEDIATE </a>
+    <button href="#" *ngIf="isAuthenticated | async" class="ml-2 whitespace-nowrap inline-flex items-center justify-center px-4  border border-transparent rounded-full shadow-sm text-xs leading-8 font-medium text-white bg-blue-500 hover:bg-deepblue uppercase  " [routerLink]="['/dashboard']">Dashboard</button>
+    <button href="#" *ngIf="!(isAuthenticated | async)" class="ml-2 whitespace-nowrap inline-flex items-center justify-center px-4  border border-transparent rounded-full shadow-sm text-xs leading-8 font-medium text-white bg-blue-500 hover:bg-deepblue uppercase " [routerLink]="['/dashboard/login']">Login</button> 
+    <button herf="#" *ngIf="isAuthenticated | async" class="ml-2 whitespace-nowrap inline-flex items-center justify-center px-4  border border-transparent rounded-full shadow-sm text-xs leading-8 font-medium text-white bg-blue-500 hover:bg-deepblue uppercase  " (click)="onLogout($event)">Logout</button> 
+</div>
+</div>
+<nav class="hidden lg:flex space-x-2 justify-center border-t border-lightgray dark:border-transparentblue">
+  <app-navitem *ngFor="let menuitem of data;" [menudata]="menuitem"></app-navitem> 
+</nav>

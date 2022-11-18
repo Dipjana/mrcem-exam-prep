@@ -1,0 +1,124 @@
+<div class="topmenu">
+    <div class="flex flex-row fixed w-full z-50">
+      <nav class="bg-white flex grow shadow-sm shadow-lightgray dark:bg-deepblueshade1">
+        <div class="max-w-full mx-auto py-2 sm:py-0 md:py-0 px-2 sm:px-4 lg:px-8 w-full">
+          <div class="relative flex items-center justify-between">
+            <div class="flex items-center">
+              <div class="items-center inline-block md:flex">
+                <a class="hidden md:inline w-60" [routerLink]="['/quiz']">
+                  <img  alt="logo" class="dark:hidden" src="assets/images/mrcem/logo2.png">
+                  <img alt="logo" class="hidden dark:inline" src="assets/images/mrcem/logo2-footer.png">
+                </a>
+                <!-- <div id="logged-menu">
+                  <ul>
+                    <li> 
+                      <a [routerLink]="['/quiz/subject-exam']">
+                      <svg  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mt-0.5"><path  d="M15 5V7M15 11V13M15 17V19M5 5C3.89543 5 3 5.89543 3 7V10C4.10457 10 5 10.8954 5 12C5 13.1046 4.10457 14 3 14V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V14C19.8954 14 19 13.1046 19 12C19 10.8954 19.8954 10 21 10V7C21 5.89543 20.1046 5 19 5H5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                      <span>Subject Exam</span></a>
+                    </li>
+                    <li> 
+                      <a [routerLink]="['/quiz/revision-module']">
+                      <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5 mt-0.5"><path  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                      <span>Revision Modules</span></a>
+                    </li>
+                    <li> 
+                      <a [routerLink]="['/quiz/testall']">
+                      <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5 mt-0.5"><path  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                      <span>My Performance</span></a>
+                    </li>
+                  </ul>
+                </div> -->
+              </div>
+            </div>
+    
+  
+            <div
+              class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+            >
+             
+              <!-- <div class="inline-flex"><app-mode-switch></app-mode-switch></div> -->
+              <div class="ml-3 relative group">
+                <div class="sm:h-14 sm:top-3 relative">
+                  <button
+                    type="button"
+                    class="bg-white flex text-sm rounded-full focus:outline-none sm:h-8 w-8 dark:bg-deepblueshade1"
+                    id="user-menu-button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    <span class="sr-only">Open user menu</span>
+                    <img
+                      *ngIf="!!profileimage; else shownoimage"
+                      class="h-8 w-8 rounded-full"
+                      [src]="profileimage"
+                      alt="profile image"
+                    />
+                    <ng-template #shownoimage>
+                      <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+                        </svg>
+                  </ng-template>
+                  </button>
+                </div>
+  
+                <div
+                  class="hidden group-hover:block group-hover:scale-100 origin-top-right absolute right-0 mt-1 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="user-menu-button"
+                  tabindex="-1"
+                >
+              
+                  <a
+                  [routerLink]="['/quiz/profile']"
+                    class="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                    tabindex="-1"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5 mr-1 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    Your Profile</a>
+                  <a
+                    class="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                    tabindex="-1"
+                    (click)="onLogout($event)"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5 mr-1 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                      />
+                    </svg>
+                    Logout</a
+                  >
+                </div>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  

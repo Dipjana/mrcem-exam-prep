@@ -1,1 +1,29 @@
-<p>home works!</p>
+<app-navbar></app-navbar>
+<app-app-hero></app-app-hero>
+<app-homecontent></app-homecontent>
+<section class="achievements py-20 bg-blue-600">
+    <div class="container mx-auto">
+        <header class="text-center">
+            <h2 class="text-white text-xl md:text-2xl lg:text-3xl font-bold text-center">
+                Submit a Question
+            </h2>
+            <h4 class="text-white text-base">
+                We are currently expanding our question databases.<br />
+                If you are interested in becoming an author for MRCEM Exam Prep,
+                please contact us.
+            </h4>
+        </header>
+
+        <div class="mt-8 flex justify-center">
+            <div class="mt-3 sm:mt-0 sm:ml-3">
+                <a
+                [routerLink]="['/contact-us']"
+                    class="flex items-center justify-center w-64 px-4 py-3 border border-transparent text-sm font-medium rounded-full text-blue-900 bg-white hover:bg-blue-300 hover:text-deepblue"
+                >
+                    CONTACT US
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

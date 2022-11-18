@@ -4,11 +4,10 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { AUTH_STATE_NAME } from 'src/app/store/auth/auth.selector';
-import { AuthReducer } from 'src/app/store/auth/auth.reducer';
-import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from 'src/app/store/auth/auth.effect';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { AuthGuard } from 'src/app/guard/auth.guard';
  
 @NgModule({
   declarations: [
@@ -17,14 +16,15 @@ import { AuthEffects } from 'src/app/store/auth/auth.effect';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, 
+    SharedModule,
     FormsModule,
     RouterModule.forChild([
-      {path: '', component: DashboardComponent},
-      {path: 'login', component: LoginComponent}
+      {path: 'login', component: LoginComponent},
+      { path: '', component: DashboardComponent, canActivate: [AuthGuard] },
     ]),
-    StoreModule.forFeature(AUTH_STATE_NAME, AuthReducer),
     EffectsModule.forFeature([AuthEffects])
   ]
+
 })
 export class DashboardModule { }

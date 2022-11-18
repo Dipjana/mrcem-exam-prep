@@ -1,0 +1,54 @@
+<footer class="flex flex-col lg:flex-row p-8 bg-blue-900 text-white">
+
+    <div class="grow">
+      <img src="assets/images/{{imgdir}}/logo2-footer.png" alt="">
+      <div class="social-links mt-5">
+        <h2 class="text-white text-base font-bold mb-2">Follow us</h2>
+        <a class="mr-3" href="https://www.facebook.com/medicalexamprep/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a class="mr-3" href="https://twitter.com/MedicalExamPrep" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a class="mr-3" href="https://www.instagram.com/medicalexamprep101/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <div class="w-full sm:w-3/12 my-5 lg:my-0">
+      <div class="menu-title section-color mb-2 w-full sm:w-auto text-xl">Site links</div>
+      <ul class="fmenu">
+        <li><a [routerLink]="['/testimonial']" class="title section-color text-sm fw-bolder text-uppercase flex flex-row"> <span class="py-1 pr-2"> About Us</span></a></li>
+        <li><a [routerLink]="['/mrcem-primary']" class="title section-color text-sm fw-bolder text-uppercase flex flex-row"><span class="py-1 pr-2"> About the MRCEM Primary</span></a></li>
+        <li><a [routerLink]="['/testimonial']" class="title section-color text-sm fw-bolder text-uppercase flex flex-row"><span class="py-1 pr-2"> Testimonials</span></a></li>
+        <li><a [routerLink]="['/contact-us']" class="title section-color text-sm fw-bolder text-uppercase flex flex-row"><span class="py-1 pr-2"> Contact Us</span></a></li>
+        <li><a [routerLink]="['/faq']" class="title section-color text-sm fw-bolder text-uppercase flex flex-row"><span class="py-1 pr-2"> FAQ</span></a></li>
+      </ul>
+    </div>
+    <div class="w-full sm:w-3/12">
+      <div class="menu-title section-color mb-2 w-full sm:w-auto text-xl">Other Resources</div>
+                <ul class="fmenu">
+                  <li><a target="_blank" href="https://rcem.ac.uk/" class="title section-color text-sm fw-bolder text-uppercase flex flex-row">
+                     <span class="py-1 pr-2"> College of Emergency Medicine </span><i class="fa fa-external-link flex items-center" aria-hidden="true"></i></a></li>
+                  <li><a target="_blank" href="https://rcem.ac.uk/examination-calendar-and-fees/" class="title section-color text-sm fw-bolder text-uppercase flex flex-row">
+                     <span class="py-1 pr-2"> MRCEM Exam Dates & Fees </span><i class="fa fa-external-link flex items-center" aria-hidden="true"></i></a></li>
+                  <li><a target="_blank" href="https://www.medicalexamprep.co.uk/" class="title section-color text-sm fw-bolder text-uppercase flex flex-row">
+                     <span class="py-1 pr-2"> Medical Exam Prep </span><i class="fa fa-external-link flex items-center" aria-hidden="true"></i></a></li>
+                  <li><a target="_blank" href="https://www.frcrexamprep.co.uk/" class="title section-color text-sm fw-bolder text-uppercase flex flex-row">
+                     <span class="py-1 pr-2"> FRCR Exam Prep </span><i class="fa fa-external-link flex items-center" aria-hidden="true"></i></a></li>
+                  <li><a target="_blank" href="https://www.mrcgpexamprep.co.uk/" class="title section-color text-sm fw-bolder text-uppercase flex flex-row">
+                     <span class="py-1 pr-2"> MRCGP Exam Prep </span><i class="fa fa-external-link flex items-center" aria-hidden="true"></i></a></li>
+                  <li><a target="_blank" href="https://www.plabprep.co.uk/" class="title section-color text-sm fw-bolder text-uppercase flex flex-row">
+                     <span class="py-1 pr-2"> PLAB Prep </span><i class="fa fa-external-link flex items-center" aria-hidden="true"></i></a></li>
+                  <li><a target="_blank" href="https://www.anatomyprep.co.uk/" class="title section-color text-sm fw-bolder text-uppercase flex flex-row">
+                     <span class="py-1 pr-2"> Anatomy Prep </span><i class="fa fa-external-link flex items-center" aria-hidden="true"></i></a></li>
+                </ul>
+    </div>
+   
+  </footer>
+  <div class="sitecredit">
+    <div class="flex xs:flex-col sm:flex-row flex-col-reverse px-8 py-4">
+      <div class="grow text-xs w-full sm:w-auto">
+        Copyright © 2011-{{date}} <a href="#">{{baseUrl}}</a> 
+      </div>
+      <div class="w-full sm:w-3/12 flex flex-row mb-2 sm:mb-0">
+        <a [routerLink]="['/terms-and-conditions']" class="text-xs mr-2">Terms & Conditions</a>
+        <a [routerLink]="['/privacy-policy']" class="text-xs">Privacy Policy</a>
+        </div>
+    </div>
+  </div>
+  

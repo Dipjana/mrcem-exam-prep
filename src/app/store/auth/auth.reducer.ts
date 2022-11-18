@@ -1,6 +1,6 @@
 import { initialState } from "./auth.state";
 import { createReducer, on } from '@ngrx/store';
-import { loginFail, loginSucess } from "./auth.action";
+import { loginFail, loginSucess, logOut } from "./auth.action";
 import { setErrorMessage } from "../shared/shared.action";
 
 const _authReducer = createReducer(initialState,
@@ -13,6 +13,11 @@ const _authReducer = createReducer(initialState,
         return{
             ...state,
             error: action
+        }
+    }),on(logOut, (state) =>{
+        return{
+            ...state,
+            user: null,
         }
     })
     )
