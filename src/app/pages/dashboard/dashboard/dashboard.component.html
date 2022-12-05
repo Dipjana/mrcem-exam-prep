@@ -1,2 +1,94 @@
 <app-dashboard-nav></app-dashboard-nav>
-<!-- <app-navbar></app-navbar> -->
+<div class="w-full border-t flex flex-col relative">
+    <main class="lg:pb-4 px-2 py-10 md:px-10 md:py-16 flex-none mb-4 bg-slate-200">
+        <div lass="mt-6 sm:mt-8 md:mt-0 md:mb-4 flex">
+            <span class="ml-4 sm:ml-6 md:ml-0 mt-10 mb-4 sm:mt-5 inline-block text-xl font-medium lg:text-xl lg:font-semibold font-sans capitalize">
+                Dashboard
+            </span>
+        </div>
+
+        <section class="lg:flex gap-1">
+            <div class="card w-full lg:w-1/4 px-3 py-2.5 rounded-md bg-white dark:bg-blue-800 dark:text-blue-600 dark:border dark:shadow-deepblueshade1 dark:bg-gradient-to-b dark:from-darkblue dark:to-deepblueshade">
+                <h4 class="dark:text-white">Overall Score</h4>
+                <!-- <app-doughnutchart [chartdata]="chartdata" [chartpercent]="chartpercent" *ngIf="showchart;else showloading"></app-doughnutchart> -->
+                <app-doughnutchart></app-doughnutchart>
+                <ng-template #showloading>
+                    <div class="flex justify-center items-center h-full">
+                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                    </div>
+                
+                </ng-template>
+            </div>
+            <!-- <div  class="card w-full lg:w-1/4 dark:bg-blue-800 dark:text-blue-600 dark:border dark:shadow-deepblueshade1 dark:bg-gradient-to-b dark:from-darkblue dark:to-deepblueshade lg:mx-2 my-2 lg:my-0">
+                <h4 class="dark:text-white">Revision Modules</h4>
+                <performancechart [perchardata]="lessonprogress | async"></performancechart>
+            </div> -->
+            <div  class="card w-full lg:w-1/4 px-3 py-2.5 rounded-md bg-white dark:bg-blue-800 dark:text-blue-600 dark:border dark:shadow-deepblueshade1 dark:bg-gradient-to-b dark:from-darkblue dark:to-deepblueshade lg:mx-2 my-2 lg:my-0">
+                <h4 class="dark:text-white">Question Review</h4>
+                <div class="lg:h-36"></div>
+                
+                <a [routerLink]="['/quiz/question-review']" class="rounded-lg font-open-sans border-2 border-current w-full block p-4 text-center shadow-md mt-4">Continue</a>
+            </div>
+            <div  class="card w-full bg-white px-3 py-2.5 rounded-md lg:w-1/4 dark:bg-blue-800 dark:text-blue-600 dark:border  dark:shadow-deepblueshade1 dark:bg-gradient-to-b dark:from-darkblue dark:to-deepblueshade lg:mx-2 my-2 lg:my-0">
+                <h4 class="dark:text-white">Wrong Question Quiz</h4>
+       
+                    <a [routerLink]="['/quiz/wrong-question-quiz/sbaq']" class="rounded-lg font-open-sans border-2 border-current w-full block p-4 text-center shadow-md mt-4">SBAQ</a>
+                    <a [routerLink]="['/quiz/wrong-question-quiz/saq']" class="rounded-lg font-open-sans border-2 border-current w-full block p-4 text-center shadow-md mt-4">SAQ</a>
+                    <a [routerLink]="['/quiz/wrong-question-quiz/sba']" class="rounded-lg font-open-sans border-2 border-current w-full block p-4 text-center shadow-md mt-4">SBA</a>
+            </div>
+            <div 
+
+            class="card w-full bg-white px-3 py-2.5 rounded-md dark:bg-blue-800 dark:text-blue-600 dark:border dark:shadow-deepblueshade1 dark:bg-gradient-to-b dark:from-darkblue dark:to-deepblueshade': true, ' lg:w-1/2'">
+                <app-dashtab></app-dashtab>
+            </div>
+        </section>
+
+        <section class="lg:flex gap-1 mt-4">
+            <div class="card w-full bg-white px-3 py-2.5 rounded-md lg:w-2/6 mb-2 dark:bg-deepblueshade3 dark:text-lightblue dark:border dark:border-transparentblue dark:shadow-deepblueshade1 dark:bg-gradient-to-b dark:from-darkblue dark:to-deepblueshade">
+                <!-- <dash-tab-questions [data]="dashtabquestion" *ngIf="!!dashtabquestion.length"></dash-tab-questions> -->
+            </div>
+            <div class="card w-full bg-white px-3 py-2.5 rounded-md lg:w-4/6 mb-2 lg:ml-2 dark:bg-deepblueshade3 dark:text-lightblue dark:border dark:border-transparentblue dark:shadow-deepblueshade1 dark:bg-gradient-to-b dark:from-darkblue dark:to-deepblueshade">
+                <app-scorechart></app-scorechart>
+            </div>
+        </section>
+
+        <section class="lg:flex gap-1 mt-1">
+            <div class="card w-full bg-white px-3 py-2.5 rounded-md lg:w-1/4 dark:bg-deepblueshade3 dark:text-lightblue dark:border dark:border-transparentblue dark:shadow-deepblueshade1 dark:bg-gradient-to-b dark:from-darkblue dark:to-deepblueshade">
+                <!-- <count-down></count-down> -->
+            </div>
+
+            <div class="card w-full bg-white px-3 py-2.5 rounded-md lg:w-3/4 lg:mx-2 my-2 lg:my-0 flex flex-col justify-center text-center items-center dark:bg-deepblueshade3 dark:text-lightblue dark:border dark:border-transparentblue dark:shadow-deepblueshade1 dark:bg-gradient-to-b dark:from-darkblue dark:to-deepblueshade">
+                
+                <h4 class="mb-6 text-xl md:text-2xl w-full md:w-1/2 dark:text-white">
+                    Account and Subscriptions
+                </h4>
+
+                <div class="w-full md:w-2/3">
+                    <p class="text-sm mb-5">
+                        You have   365 days of your subscription remaining.
+                    </p>
+                    <a class="rounded-lg font-open-sans border-2 border-current w-full block p-4 text-center shadow-md mb-2" [routerLink]="['/quiz/profile/1']">Account And Subscription</a>
+                    <a class="rounded-lg font-open-sans border-2 border-current w-full block p-4 text-center shadow-md mb-2" [routerLink]="['/quiz/profile/3']">Order Details</a>
+                    <a class="rounded-lg font-open-sans border-2 border-secondary border-current w-full block p-4 text-center shadow-md bg-emerald-400 text-white mb-2" href="#">Extend Your Subscription</a>
+                </div>
+
+            </div>
+
+            <div class="flex flex-col bg-white px-3 py-2.5 rounded-md items-center card w-full lg:w-1/4 dark:bg-deepblueshade3 dark:text-lightblue dark:border dark:border-transparentblue dark:shadow-deepblueshade1 dark:bg-gradient-to-b dark:from-darkblue dark:to-deepblueshade">
+                <h4 class="mb-2 dark:text-white">
+                    MRCEM Revision Guide
+                </h4>
+                <!-- <p class="text-xs">
+                    Our Complete Revision Guide to the MRCEM Exam contains important information that will help you to better understand how to prepare for the MRCEM exam.
+                </p> -->
+                <div class="text-center">
+                  <img class="w-48 inline-block mt-1" src="https://mrcemexamprep.net/sites/default/files/3D.png" alt="Complete Revision Guide" />
+                </div>                
+                <a target="_blank" class="rounded-lg font-open-sans border-2 border-current w-full block p-4 text-center shadow-md" >Download</a>
+            </div>
+       </section>
+    </main>
+</div>

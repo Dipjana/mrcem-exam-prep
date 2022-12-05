@@ -1,0 +1,15 @@
+<div class="lg:h-36">
+    <h3 class="text-sm font-semibold text-deepblue mb-5 flex dark:text-lightblue">Progress </h3>
+    <div class="chart flex mb-6 items-center" *ngIf="!!perdata">
+        <div class="w-full bg-gray-200 h-1">
+            <!-- <div class="bg-deepblue h-1 dark:bg-glosyblue" style="width: {{perdata.total_progress}}%"></div>s -->
+        </div>
+
+        <span class="text-xs ml-2">{{perdata.total_progress}}%</span>
+    </div>
+    <div class="text-xs text-deepblue font-semibold bottom-8 leading-5 dark:text-white" *ngIf="!!perdata">
+        <!-- Out of {{perdata.total_lession}} modules, You have completed only {{perdata.total_read}}. Please complete rest of the revisions to get better score -->
+        You have currently completed {{perdata.total_progress}}% of the revision modules
+    </div>
+</div>
+<a [routerLink]="['/quiz/revision-module']" class="rounded-lg font-open-sans border-2 border-current w-full block p-4 text-center shadow-md mt-4">Continue</a>

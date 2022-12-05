@@ -8,11 +8,13 @@ import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from 'src/app/store/auth/auth.effect';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AuthGuard } from 'src/app/guard/auth.guard';
+import { UserProfileComponent } from './user-profile/user-profile.component';
  
 @NgModule({
   declarations: [
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserProfileComponent
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,8 @@ import { AuthGuard } from 'src/app/guard/auth.guard';
     RouterModule.forChild([
       {path: 'login', component: LoginComponent},
       { path: '', component: DashboardComponent, canActivate: [AuthGuard] },
+      { path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard] },
+
     ]),
     EffectsModule.forFeature([AuthEffects])
   ]
