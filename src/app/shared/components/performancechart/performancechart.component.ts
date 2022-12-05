@@ -15,6 +15,6 @@ export class PerformancechartComponent implements OnInit {
   
   ngOnInit(): void {
   }
-  baseUrl = environment.baseUrl;
+  // baseUrl = environment.baseUrl;
 
 }
